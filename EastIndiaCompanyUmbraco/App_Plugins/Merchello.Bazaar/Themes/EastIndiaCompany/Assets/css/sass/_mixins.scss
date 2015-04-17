@@ -1,0 +1,63 @@
+﻿@mixin vertical-center($percent) {
+	position: relative;
+	top: $percent;
+	-moz-transform: translateY(-#{$percent});
+	-ms-transform: translateY(-#{$percent});
+	-o-transform: translateY(-#{$percent});
+	-webkit-transform: translateY(-#{$percent});
+	transform: translateY(-#{$percent});
+}
+
+
+// media queries
+
+// Smartphones (portrait and landscape) ----------- */
+@mixin smartphone-only {
+	@media only screen and (max-width : 480px) {
+		@content
+	}
+}
+
+
+// Smartphones (landscape) ----------- */
+@mixin smartphone-landscape {
+	@media only screen and (min-width : 321px) {
+		@content
+	}
+}
+
+// Smartphones (portrait) ----------- */
+@mixin smartphone-portrait {
+	@media only screen and (max-width : 320px) {
+		@content
+	}
+}
+
+// Tablets (portrait and landscape) ----------- */
+@mixin tablet {
+	@media only screen and (min-width : 481) and (max-width : 1024px) {
+		@content
+	}
+}
+
+// tablets (landscape) ----------- */
+@mixin tablet-landscape {
+	@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
+		@content
+	}
+}
+
+// tablets (portrait) ----------- */
+@mixin tablet-portrait {
+
+	@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
+		@content
+	}
+}
+
+// Desktops and laptops ----------- */
+@mixin desktop {
+	@media only screen and (min-width : 1500px) {
+		@content
+	}
+}
