@@ -5,9 +5,22 @@
 @using Merchello.Web
 @using Umbraco.Web
 
-<div class="navbar navbar-default">
+<div class="nav">
     <div class="container">
-		<a class="navbar-brand" href="@Model.StorePage.Url">@Model.StoreTitle</a>
+        <a href="@Model.StorePage.Url" class="logo col-md-3">
+            <img src="~/logo.png" alt=""/>
+        </a>
+        <div class="nav-items col-md-9">
+            
+        </div>
+    </div>
+</div>
+
+@*<div class="navbar navbar-default">
+    <div class="container">
+        <a class="navbar-brand" href="@Model.StorePage.Url">
+            <img src="~/logo.png" alt="@Model.StoreTitle" />
+        </a>
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				<span class="sr-only">Toggle navigation</span>
@@ -51,12 +64,12 @@
                 {
                     <li><a href="@Model.WishListPage.Url">Wish List (@(((ICustomer)Model.CurrentCustomer).WishList().TotalItemCount))</a></li>
                 }
-                <li><a href="@Model.BasketPage.Url">Basket (@Model.CurrentCustomer.Basket().TotalItemCount)</a></li>
+                <li><a href="@Model.BasketPage.Url">Cart (@Model.CurrentCustomer.Basket().TotalItemCount)</a></li>
             </ul>
 
         </div><!-- /.nav-collapse -->
     </div><!-- /navbar-inner -->
-</div>
+</div>*@
 
 @functions
 {

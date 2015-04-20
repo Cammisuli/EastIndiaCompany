@@ -1,9 +1,28 @@
 ﻿@import "sass/_mixins.scss";
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700,300,400);
 
-$primary-color: 
+$nav-bar-height: 79px;
+
+body, h1, h2, h3, h3, h5, p, li, a, div{
+    font-family: 'Open Sans', 'Roboto', sans-serif;
+}
 
 body{
 	overflow-y:scroll;
+}
+
+.navbar{
+    background-color: white;
+    border:none;
+    height: $nav-bar-height;
+    .navbar-brand{
+        width:20%;
+        padding:0;
+        height:$nav-bar-height;
+        img{
+            max-width: 100%;
+        }
+    }
 }
 
 img {

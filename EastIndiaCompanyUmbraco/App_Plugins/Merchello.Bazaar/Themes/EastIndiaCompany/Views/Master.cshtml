@@ -1,4 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<MasterModel>
+@using System.Web.Optimization
 @using Merchello.Bazaar
 @using Merchello.Bazaar.Models.ViewModels
 @using ClientDependency.Core.Mvc
@@ -12,19 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@Model.Name</title>
     @{  // Theme Assets references
-        //// TODO make bundles
         Html.RequiresJs("http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js")
-           .RequiresCss("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css")
-           .RequiresCss("http://fonts.googleapis.com/css?family=Roboto:400,300,100,500")
-           .RequiresJs("/App_Plugins/Merchello.Bazaar/Assets/js/jquery.validate.min.js")
-           .RequiresJs("/App_Plugins/Merchello.Bazaar/Assets/js/jquery.unobtrusive-ajax.min.js")
-           .RequiresJs("/App_Plugins/Merchello.Bazaar/Assets/js/jquery.validate.unobtrusive.min.js")
-           .RequiresJs("/App_Plugins/Merchello.Bazaar/Assets/js/merchello.bazaar.js")
-           .RequiresPackageCss(Model, "bootstrap.min.css")
-           .RequiresPackageCss(Model, "styles.min.css")
-           .RequiresPackageJs(Model, "bootstrap.min.js");
+            .RequiresCss("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
     }
     @Html.RenderCssHere()
+    @Styles.Render("~/bundles/sitecss")
 </head>
 <body class="@Model.DocumentTypeAlias" id="top">
     @Html.ThemedPartial(Model, "NavBar")
@@ -32,6 +25,8 @@
         @RenderBody()
     </div>
     @Html.RenderJsHere()
+    @Scripts.Render("~/bundles/corejs")
+    @Scripts.Render("~/bundles/sitejs")
     @RenderSection("AdditionalScripts", false)
 </body>
 </html>

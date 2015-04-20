@@ -1,5 +1,20 @@
-﻿body {
+﻿@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700,300,400);
+body, h1, h2, h3, h3, h5, p, li, a, div {
+  font-family: 'Open Sans', 'Roboto', sans-serif; }
+
+body {
   overflow-y: scroll; }
+
+.navbar {
+  background-color: white;
+  border: none;
+  height: 79px; }
+  .navbar .navbar-brand {
+    width: 20%;
+    padding: 0;
+    height: 79px; }
+    .navbar .navbar-brand img {
+      max-width: 100%; }
 
 img {
   max-width: 100%; }
@@ -64,3 +79,4 @@ span.field-validation-error {
   -webkit-border-radius: 0;
   border-radius: 0; }
 
+/*# sourceMappingURL=styles.css.map */
