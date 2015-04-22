@@ -552,6 +552,17 @@
     <Content Include="App_Plugins\Merchello\js\merchello.testing.js" />
     <Content Include="App_Plugins\Merchello\propertyeditors\productpicker\merchello.productselector.dialog.html" />
     <Content Include="App_Plugins\Merchello\propertyeditors\productpicker\merchello.productselector.html" />
+    <Content Include="bin\Merchello.Bazaar.dll" />
+    <Content Include="bin\Merchello.Bazaar.pdb" />
+    <Content Include="bin\Merchello.Core.dll" />
+    <Content Include="bin\Merchello.Core.pdb" />
+    <Content Include="bin\Merchello.Core.xml" />
+    <Content Include="bin\Merchello.Examine.dll" />
+    <Content Include="bin\Merchello.Examine.pdb" />
+    <Content Include="bin\Merchello.Examine.xml" />
+    <Content Include="bin\Merchello.Web.dll" />
+    <Content Include="bin\Merchello.Web.pdb" />
+    <Content Include="bin\Merchello.Web.XML" />
     <Content Include="Config\grid.editors.config.js" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
@@ -3053,6 +3064,10 @@
     <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Views\Store.cshtml" />
     <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Views\WishList.cshtml" />
     <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Assets\css\sass\_mixins.scss" />
+    <Content Include="bin\Merchello.Bazaar.dll.config" />
+    <Content Include="bin\Merchello.Core.dll.config" />
+    <Content Include="bin\Merchello.Examine.dll.config" />
+    <None Include="bin\Merchello.Web.dll.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
