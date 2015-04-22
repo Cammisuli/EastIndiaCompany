@@ -216,6 +216,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Assets\js\site.js" />
+    <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Assets\js\site.min.js">
+      <DependentUpon>site.js</DependentUpon>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -435,6 +439,9 @@
     <Content Include="App_Plugins\Merchello\Package.manifest" />
     <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Assets\css\styles.css.map">
       <DependentUpon>styles.css</DependentUpon>
+    </Content>
+    <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Assets\js\site.min.js.map">
+      <DependentUpon>site.min.js</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
