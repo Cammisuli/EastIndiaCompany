@@ -21,9 +21,10 @@
 </head>
 <body class="@Model.DocumentTypeAlias" id="top">
     @Html.ThemedPartial(Model, "NavBar")
-    <div class="container">
-        @RenderBody()
-    </div>
+
+    @RenderBody()
+
+    @Html.ThemedPartial(Model, "Footer")
     @Html.RenderJsHere()
     @Scripts.Render("~/bundles/corejs")
     @Scripts.Render("~/bundles/sitejs")

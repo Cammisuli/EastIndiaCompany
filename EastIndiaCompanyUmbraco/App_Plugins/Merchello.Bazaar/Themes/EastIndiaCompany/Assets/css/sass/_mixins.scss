@@ -2,7 +2,6 @@
 	position: relative;
 	top: $percent;
 	-moz-transform: translateY(-#{$percent});
-	-ms-transform: translateY(-#{$percent});
 	-o-transform: translateY(-#{$percent});
 	-webkit-transform: translateY(-#{$percent});
 	transform: translateY(-#{$percent});

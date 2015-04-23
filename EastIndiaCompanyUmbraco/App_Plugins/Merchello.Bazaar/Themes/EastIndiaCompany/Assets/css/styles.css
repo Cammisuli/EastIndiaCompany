@@ -1,7 +1,7 @@
 /*@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700,300,400);*/
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 body, h1, h2, h3, h3, h5, p, li, a, div {
-  font-family: "Droid Sans", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -13,8 +13,10 @@ body {
 }
 
 section.nav {
+  height: 23.5vh;
   font-size: 1.5rem;
   text-transform: none;
+  position: relative;
 }
 section.nav .top, section.nav .middle, section.nav .bottom {
   margin: 0;
@@ -28,11 +30,11 @@ section.nav .top div {
   display: inline-block;
 }
 section.nav .top .search {
-  padding: 15px;
+  padding: 15px 25px;
 }
 section.nav .top .account-info {
   float: right;
-  padding: 15px;
+  padding: 15px 25px;
 }
 section.nav .top .account-info a {
   padding-left: 15px;
@@ -48,6 +50,8 @@ section.nav .middle .logo img {
 }
 section.nav .bottom {
   background-color: #f7f4f2;
+  bottom: 0;
+  position: absolute;
 }
 section.nav .bottom a {
   -webkit-transition: color 0.2s ease-in;
@@ -81,7 +85,6 @@ section.nav .bottom .nav-items li a {
   position: relative;
   top: 25%;
   -moz-transform: translateY(-25%);
-  -ms-transform: translateY(-25%);
   -o-transform: translateY(-25%);
   -webkit-transform: translateY(-25%);
   transform: translateY(-25%);
@@ -103,17 +106,76 @@ section.nav .bottom li.has-dropdown ul.dropdown {
   left: 0;
   right: 0;
   z-index: 999;
-  -moz-transition: all ease-out .26s;
-  -o-transition: all ease-out .26s;
-  -webkit-transition: all ease-out .26s;
-  transition: all ease-out .26s;
+  -moz-transition: all ease-out 0.26s;
+  -o-transition: all ease-out 0.26s;
+  -webkit-transition: all ease-out 0.26s;
+  transition: all ease-out 0.26s;
 }
 section.nav .bottom li.has-dropdown ul.dropdown a {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 section.nav .bottom li.has-dropdown ul.dropdown a:hover, section.nav .bottom li.has-dropdown ul.dropdown a:active, section.nav .bottom li.has-dropdown ul.dropdown a:focus {
   text-decoration: none;
   color: white;
+}
+
+section#hero {
+  height: 76.5vh;
+}
+section#hero .hero-image {
+  height: 100%;
+  width: 100%;
+}
+section#hero .hero-image img {
+  height: 100%;
+  width: 100%;
+}
+
+section#categories {
+  height: 80vh;
+}
+section#categories .container {
+  height: 100%;
+  position: relative;
+}
+section#categories .home-links {
+  position: absolute;
+  bottom: 30px;
+}
+section#categories .home-links .home-link {
+  max-height: 40vh;
+  width: 100%;
+  position: relative;
+}
+section#categories .home-links .home-link img {
+  width: 100%;
+  height: 100%;
+}
+section#categories .home-links .home-link .link {
+  width: 100%;
+  height: 45px;
+  background-color: rgba(255, 255, 255, 0.36);
+  line-height: 45px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  -moz-transition: background-color ease-in 0.26s;
+  -o-transition: background-color ease-in 0.26s;
+  -webkit-transition: background-color ease-in 0.26s;
+  transition: background-color ease-in 0.26s;
+}
+section#categories .home-links .home-link .link:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+section#categories .home-links .home-link .link a {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+
+section#footer {
+  height: 20vh;
+  background-color: #f4ebd5;
 }
 
 img {
@@ -183,6 +245,13 @@ span.field-validation-error {
   border-top: 1px solid #dcd4c6;
   border-bottom: 1px solid #dcd4c6;
   padding: 10px 0px;
+}
+
+a {
+  color: #be5754;
+}
+a:hover, a:active, a:focus {
+  color: #be5754;
 }
 
 /*# sourceMappingURL=styles.css.map */

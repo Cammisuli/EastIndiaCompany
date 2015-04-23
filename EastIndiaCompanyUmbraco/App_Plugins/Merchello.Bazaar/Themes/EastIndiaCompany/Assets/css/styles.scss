@@ -1,18 +1,29 @@
 ﻿@import "sass/_mixins.scss";
 /*@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700,300,400);*/
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 $default-spacing: 15px;
 
-
+$primary-color:#D0A847;
+$primary-color-light: lighten($primary-color, 35%);
+//#7F051E;
 $accent-color: #f7f4f2;
 
 $font-color: #666666;
 
 $link-color: #be5754;
 
+
+$nav-height: 23.5vh;
+$hero-height: 100vh - $nav-height;
+$footer-height: 20vh;
+$categories-height: 100vh - $footer-height;
+
+
+$transition-timing: 0.26s;
+
 body, h1, h2, h3, h3, h5, p, li, a, div {
-    font-family: "Droid Sans", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -25,8 +36,11 @@ body {
 
 section.nav {
     $section-height: 45px;
+
+    height: $nav-height;
     font-size: 1.5rem;
     text-transform: none;
+    position: relative;
 
     .top, .middle, .bottom {
         margin: 0;
@@ -42,12 +56,13 @@ section.nav {
         }
 
         .search {
-            padding: $default-spacing;
+            padding: $default-spacing $default-spacing + 10;
         }
 
         .account-info {
             float: right;
-            padding: $default-spacing;
+            padding: $default-spacing $default-spacing + 10;
+
 
             a {
                 padding-left: $default-spacing;
@@ -70,6 +85,8 @@ section.nav {
 
     .bottom {
         background-color: $accent-color;
+        bottom: 0;
+        position: absolute;
 
         a {
             -webkit-transition: color 0.2s ease-in;
@@ -123,7 +140,7 @@ section.nav {
             }
 
             ul.dropdown {
-                background-color: #D0A847;
+                background-color: $primary-color;
                 overflow-y: hidden;
                 max-height: 0;
                 position: absolute;
@@ -131,10 +148,10 @@ section.nav {
                 left: 0;
                 right: 0;
                 z-index: 999;
-                -moz-transition: all ease-out .26s;
-                -o-transition: all ease-out .26s;
-                -webkit-transition: all ease-out .26s;
-                transition: all ease-out .26s;
+                -moz-transition: all ease-out $transition-timing;
+                -o-transition: all ease-out $transition-timing;
+                -webkit-transition: all ease-out $transition-timing;
+                transition: all ease-out $transition-timing;
 
                 a {
                     color: rgba(255, 255, 255, 0.8);
@@ -147,6 +164,74 @@ section.nav {
             }
         }
     }
+}
+
+section#hero {
+    height: $hero-height;
+
+    .hero-image {
+        height: 100%;
+        width: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+section#categories {
+    height: $categories-height;
+
+    .container {
+        height: 100%;
+        position: relative;
+    }
+
+    .home-links {
+        position: absolute;
+        bottom: $default-spacing * 2;
+
+        .home-link {
+            max-height: $categories-height/2;
+            width: 100%;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .link {
+                width: 100%;
+                height: 45px;
+                background-color: rgba(255, 255, 255, 0.36);
+                line-height: 45px;
+                text-align: center;
+                position: absolute;
+                bottom: 0;
+                -moz-transition: background-color ease-in $transition-timing;
+                -o-transition: background-color ease-in $transition-timing;
+                -webkit-transition: background-color ease-in $transition-timing;
+                transition: background-color ease-in $transition-timing;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.7);
+                }
+
+                a {
+                    height: 100%;
+                    width: 100%;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+section#footer {
+    height: $footer-height;
+    background-color: $primary-color-light;
 }
 
 img {
@@ -226,4 +311,12 @@ span.field-validation-error {
     border-top: 1px solid #dcd4c6;
     border-bottom: 1px solid #dcd4c6;
     padding: 10px 0px;
+}
+
+a {
+    color: $link-color;
+
+    &:hover, &:active, &:focus {
+        color: $link-color;
+    }
 }
