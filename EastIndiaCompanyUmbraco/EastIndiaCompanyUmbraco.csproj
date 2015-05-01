@@ -445,6 +445,7 @@
       <DependentUpon>site.min.js</DependentUpon>
     </Content>
     <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Views\Partials\Footer.cshtml" />
+    <None Include="Properties\PublishProfiles\EastIndia.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
