@@ -9,6 +9,9 @@ html {
 body {
   overflow-y: scroll; }
 
+section#content .container {
+  min-height: 56.4vh; }
+
 section.nav {
   height: 23.5vh;
   font-size: 1.5rem;
@@ -141,6 +144,7 @@ section#footer {
   height: 20vh;
   background-color: #f4ebd5;
   position: relative;
+  width: 100%;
   border-top: 1px solid #f1e5c9;
   padding: 15px;
   color: gray; }
@@ -219,3 +223,5 @@ a {
   color: #be5754; }
   a:hover, a:active, a:focus {
     color: #be5754; }
+
+/*# sourceMappingURL=styles.css.map */

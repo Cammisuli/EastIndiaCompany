@@ -45,10 +45,10 @@
                 <li class="has-dropdown">
                     <a href="#">Products</a>
                     <ul class="dropdown">
-                        <li><a href="#">Product 1</a></li>
-                        <li><a href="#">Product 2</a></li>
-                        <li><a href="#">Product 3</a></li>
-                        <li><a href="#">Product 4</a></li>
+                        @foreach (var group in Model.ProductGroups)
+                        {
+                            <li><a href="@group.Url">@group.Name</a></li>
+                        }
                     </ul>
                 </li>
                 <li><a href="#">Blog</a></li>
