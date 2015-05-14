@@ -7,12 +7,25 @@ html {
   font-size: 62.5%; }
 
 body {
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  font-size: 1.5rem; }
 
 section#content {
   min-height: 56.4vh; }
+  section#content .breadcrumbs {
+    padding: 15px; }
+  section#content .container {
+    padding-bottom: 60px; }
   section#content h1 {
     text-align: center; }
+  section#content h2, section#content h3, section#content h4 {
+    margin-top: 0;
+    color: #be5754; }
+  section#content h2 {
+    font-size: 24px;
+    margin-top: -3px;
+    line-height: 1.2;
+    font-weight: bold; }
 
 div#products {
   height: 100%; }
@@ -31,21 +44,39 @@ div#products {
       -o-transition: background-color ease-in 0.26s;
       -webkit-transition: background-color ease-in 0.26s;
       transition: background-color ease-in 0.26s; }
-    div#products .product.sale:after {
-      content: 'SALE';
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: 10px;
-      width: 75px;
-      text-align: center;
-      background-color: #E80C23;
-      color: white; }
-    div#products .product.sale .price {
-      text-decoration: line-through; }
-    div#products .product.sale .on-sale {
-      text-decoration: none;
-      color: #E80C23; }
+
+.sale {
+  position: relative; }
+  .sale:after {
+    content: 'SALE';
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    width: 75px;
+    text-align: center;
+    background-color: #E80C23;
+    color: white; }
+
+.original-price {
+  text-decoration: line-through; }
+
+.variant-pricing, .pricing {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dcd4c6; }
+  .variant-pricing > span, .pricing > span {
+    margin-right: 3px; }
+
+.description {
+  border-bottom: 1px solid #dcd4c6; }
+
+.sale-price {
+  text-decoration: none;
+  color: #E80C23; }
+
+.inventory {
+  padding-bottom: 15px; }
 
 section.nav {
   height: 23.5vh;
@@ -246,13 +277,9 @@ span.field-validation-error {
 .vcard .extended-address {
   display: block; }
 
-.inventoryWrap {
-  margin: 10px 0px;
-  border-top: 1px solid #dcd4c6;
-  border-bottom: 1px solid #dcd4c6;
-  padding: 10px 0px; }
-
 a {
   color: #be5754; }
   a:hover, a:active, a:focus {
     color: #be5754; }
+
+/*# sourceMappingURL=styles.css.map */
