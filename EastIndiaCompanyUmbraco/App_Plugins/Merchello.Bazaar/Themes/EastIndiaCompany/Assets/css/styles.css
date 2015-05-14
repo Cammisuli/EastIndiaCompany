@@ -9,8 +9,43 @@ html {
 body {
   overflow-y: scroll; }
 
-section#content .container {
+section#content {
   min-height: 56.4vh; }
+  section#content h1 {
+    text-align: center; }
+
+div#products {
+  height: 100%; }
+  div#products [class*="col-"] {
+    padding: 0; }
+  div#products .product {
+    position: relative; }
+    div#products .product a {
+      color: inherit; }
+    div#products .product:hover .info {
+      background-color: #f7f4f2; }
+    div#products .product .info {
+      padding: 5px 15px 15px 15px;
+      background-color: white;
+      -moz-transition: background-color ease-in 0.26s;
+      -o-transition: background-color ease-in 0.26s;
+      -webkit-transition: background-color ease-in 0.26s;
+      transition: background-color ease-in 0.26s; }
+    div#products .product.sale:after {
+      content: 'SALE';
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      width: 75px;
+      text-align: center;
+      background-color: #E80C23;
+      color: white; }
+    div#products .product.sale .price {
+      text-decoration: line-through; }
+    div#products .product.sale .on-sale {
+      text-decoration: none;
+      color: #E80C23; }
 
 section.nav {
   height: 23.5vh;
@@ -185,12 +220,10 @@ ol, ul {
 #add-item-price {
   margin-bottom: 1em; }
 
-.price {
-  font-size: 2em; }
-  .price .on-sale {
-    text-decoration: line-through; }
-  .price .sale-price {
-    color: red; }
+.price .on-sale {
+  text-decoration: line-through; }
+.price .sale-price {
+  color: red; }
 
 div.price {
   padding: 1em; }
@@ -223,5 +256,3 @@ a {
   color: #be5754; }
   a:hover, a:active, a:focus {
     color: #be5754; }
-
-/*# sourceMappingURL=styles.css.map */

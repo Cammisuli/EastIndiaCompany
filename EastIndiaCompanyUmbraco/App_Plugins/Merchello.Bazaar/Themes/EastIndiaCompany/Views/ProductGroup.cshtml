@@ -7,49 +7,124 @@
 @{
     Layout = "Master.cshtml";
 }
-<section id="content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h1>@Model.Name</h1>
-            </div>
+<section id="content" class="clearfix">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>@Model.Name</h1>
         </div>
+    </div>
 
-        <section id="products">
-            @{
-                var products = Model.Children<ProductModel>().ToArray();
+    <div id="products">
+        @{
+            var products = Model.Children<ProductModel>().ToArray();
+            if (products.Any())
+            {
 
-                if (products.Any())
+                foreach (var product in products)
                 {
-                    <ul id="featured" class="product-list">
-
-                        @foreach (var p in products)
-                        {
-                            <li class="row">
-                                <a href="@p.Url"><img src="@p.Image" class="col-md-3"></a>
-                                <div class="info col-md-5">
-                                    <h2><a href="@p.Url">@p.Name</a></h2>
-                                    @if (p.ProductData.OnSale)
+                    <div class="col-md-3 product @(product.ProductData.OnSale ? "sale" : "")">
+                        <a href="@product.Url">
+                            <img src="@product.Image">
+                            <div class="info">
+                                <span class="name">@product.Name.ToUpper() / </span>
+                                @if (product.ProductData.ProductVariants.Any())
+                                {
+                                    var price = product.FormattedPrice().Split('-')[0].Trim();
+                                    <span>From @price</span>
+                                }
+                                else
+                                {
+                                    <span class="price">@product.FormattedPrice()</span>
+                                    if (product.ProductData.OnSale)
                                     {
-                                        <span class="price on-sale">@p.FormattedPrice()</span>
+                                        <span class="price on-sale">@product.FormattedSalePrice()</span>
                                     }
-                                    else
-                                    {
-                                        <span class="price">@p.FormattedPrice()</span>
-                                    }
-
-                                    <p>@p.Brief</p>
-                                </div>
-                                <div class="col-md-4">
-                                    @Html.Action("RenderAddToBasket", "BasketOperations", new { area = "Bazaar", model = p })
-                                </div>
-                            </li>
-                        }
-                    </ul>
+                                }
+                            </div>
+                        </a>
+                    </div>
                 }
-
+                foreach (var product in products)
+                {
+                    <div class="col-md-3 product @(product.ProductData.OnSale ? "sale" : "")">
+                        <a href="@product.Url">
+                            <img src="@product.Image">
+                            <div class="info">
+                                <span class="name">@product.Name.ToUpper() / </span>
+                                @if (product.ProductData.ProductVariants.Any())
+                                {
+                                    var price = product.FormattedPrice().Split('-')[0].Trim();
+                                    <span>From @price</span>
+                                }
+                                else
+                                {
+                                    <span class="price">@product.FormattedPrice()</span>
+                                    if (product.ProductData.OnSale)
+                                    {
+                                        <span class="price on-sale">@product.FormattedSalePrice()</span>
+                                    }
+                                }
+                            </div>
+                        </a>
+                    </div>
+                }
+                foreach (var product in products)
+                {
+                    <div class="col-md-3 product @(product.ProductData.OnSale ? "sale" : "")">
+                        <a href="@product.Url">
+                            <img src="@product.Image">
+                            <div class="info">
+                                <span class="name">@product.Name.ToUpper() / </span>
+                                @if (product.ProductData.ProductVariants.Any())
+                                {
+                                    var price = product.FormattedPrice().Split('-')[0].Trim();
+                                    <span>From @price</span>
+                                }
+                                else
+                                {
+                                    <span class="price">@product.FormattedPrice()</span>
+                                    if (product.ProductData.OnSale)
+                                    {
+                                        <span class="price on-sale">@product.FormattedSalePrice()</span>
+                                    }
+                                }
+                            </div>
+                        </a>
+                    </div>
+                }
+                foreach (var product in products)
+                {
+                    <div class="col-md-3 product @(product.ProductData.OnSale ? "sale" : "")">
+                        <a href="@product.Url">
+                            <img src="@product.Image">
+                            <div class="info">
+                                <span class="name">@product.Name.ToUpper() / </span>
+                                @if (product.ProductData.ProductVariants.Any())
+                                {
+                                    var price = product.FormattedPrice().Split('-')[0].Trim();
+                                    <span>From @price</span>
+                                }
+                                else
+                                {
+                                    <span class="price">@product.FormattedPrice()</span>
+                                    if (product.ProductData.OnSale)
+                                    {
+                                        <span class="price on-sale">@product.FormattedSalePrice()</span>
+                                    }
+                                }
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="container">
+                    <h3>Sorry, there seems to be no products here.</h3>
+                </div>
             }
 
-        </section>
+        }
+
     </div>
 </section>

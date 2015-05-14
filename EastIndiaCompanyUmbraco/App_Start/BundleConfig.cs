@@ -19,9 +19,9 @@ namespace EastIndiaCompanyUmbraco.App_Start
                 .Include("~/App_Plugins/Merchello.Bazaar/Themes/EastIndiaCompany/Assets/js/site.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/corejs")
+                .Include("~/App_Plugins/Merchello.Bazaar/Assets/js/jquery.validate.min.js")
                 .Include("~/App_Plugins/Merchello.Bazaar/Assets/js/jquery.unobtrusive-ajax.min.js")
                 .Include("~/App_Plugins/Merchello.Bazaar/Assets/js/jquery.validate.unobtrusive.min.js")
-                .Include("~/App_Plugins/Merchello.Bazaar/Assets/js/jquery.validate.min.js")
                 .Include("~/App_Plugins/Merchello.Bazaar/Assets/js/merchello.bazaar.js"));
         }
     }

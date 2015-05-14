@@ -54,6 +54,71 @@
             Gets or sets the member types.
             </summary>
         </member>
+        <member name="T:Merchello.Core.Configuration.Outline.PluggableCollection">
+            <summary>
+            A configuration collection for pluggable objects.
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Configuration.Outline.PluggableCollection.CreateNewElement">
+            <summary>
+            Creates a new PluggableObjectElement
+            </summary>
+            <returns>
+            The <see cref="T:Merchello.Core.Configuration.Outline.PluggableObjectElement"/>.
+            </returns>
+        </member>
+        <member name="M:Merchello.Core.Configuration.Outline.PluggableCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Returns the alias (key) of the configuration element.
+            </summary>
+            <param name="element">
+            The element.
+            </param>
+            <returns>
+            The <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="P:Merchello.Core.Configuration.Outline.PluggableCollection.Item(System.Object)">
+            <summary>
+            Finds an object in the collection with the index (key alias) provided
+            </summary>
+            <param name="index">
+            The index.
+            </param>
+            <returns>
+            The <see cref="T:Merchello.Core.Configuration.Outline.PluggableObjectElement"/>.
+            </returns>
+        </member>
+        <member name="T:Merchello.Core.Configuration.Outline.PluggableObjectElement">
+            <summary>
+            A configuration element for pluggable objects.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Configuration.Outline.PluggableObjectElement.Alias">
+            <summary>
+            Gets or sets the alias (key) value for the strategies collection element.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Configuration.Outline.PluggableObjectElement.Type">
+            <summary>
+            Gets or sets the type associated with the setting.
+            </summary>
+        </member>
+        <member name="T:Merchello.Core.Configuration.Outline.StrategyElement">
+            <summary>
+            The strategy element.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Configuration.Outline.StrategyElement.Alias">
+            <summary>
+            Gets or sets the alias (key) value for the strategies collection element.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Configuration.Outline.StrategyElement.Type">
+            <summary>
+            Gets or sets the type associated with the setting.
+            </summary>
+        </member>
         <member name="T:Merchello.Core.Configuration.Outline.TreeCollection">
             <summary>
             The back office collection
@@ -237,6 +302,24 @@
         <member name="P:Merchello.Core.Events.FormatterEventArgs`2.Model">
             <summary>
             Gets or sets the model.
+            </summary>
+        </member>
+        <member name="T:Merchello.Core.Events.MerchelloMigrationEventArgs">
+            <summary>
+            The merchello migration event args.
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Events.MerchelloMigrationEventArgs.#ctor(Merchello.Core.Persistence.Migrations.Analytics.MigrationRecord)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Merchello.Core.Events.MerchelloMigrationEventArgs"/> class.
+            </summary>
+            <param name="record">
+            The record.
+            </param>
+        </member>
+        <member name="P:Merchello.Core.Events.MerchelloMigrationEventArgs.MigrationRecord">
+            <summary>
+            Gets or sets the migration record.
             </summary>
         </member>
         <member name="T:Merchello.Core.Events.PaymentAttemptEventArgs`1">
@@ -5162,10 +5245,209 @@
             Builds the field mapping cache between warehouse catalog and the warehouse catalog DTO.
             </summary>
         </member>
+        <member name="T:Merchello.Core.Persistence.Migrations.Analytics.MigrationRecord">
+            <summary>
+            Anonymous analytic data used to give the Merchello team an idea of how many installs there are.
+            We will use this information to help assess usage growth or decline. 
+            </summary>
+            <remarks>
+            You can completely disable this tracking by adding the attribute enableInstallTracking="false" to the merchello element (root)
+            in the merchello.config file
+            '<merchello  enableInstallTracking="False" />' 
+            </remarks>
+        </member>
+        <member name="P:Merchello.Core.Persistence.Migrations.Analytics.MigrationRecord.MigrationKey">
+            <summary>
+            Gets or sets the migration key.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Persistence.Migrations.Analytics.MigrationRecord.DbProvider">
+            <summary>
+            Gets or sets the DB provider.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Persistence.Migrations.Analytics.MigrationRecord.InstallDate">
+            <summary>
+            Gets or sets the install date.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Persistence.Migrations.Analytics.MigrationRecord.CurrentVersion">
+            <summary>
+            Gets or sets the current version.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Persistence.Migrations.Analytics.MigrationRecord.TargetVersion">
+            <summary>
+            Gets or sets the version.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Persistence.Migrations.Analytics.MigrationRecord.IsUpgrade">
+            <summary>
+            Gets or sets a value indicating whether is upgrade.
+            </summary>
+        </member>
         <member name="T:Merchello.Core.Persistence.Migrations.DataLossException">
             <summary>
             Used if a migration has executed but the whole process has failed and cannot be rolled back
             </summary>
+        </member>
+        <member name="T:Merchello.Core.Persistence.Migrations.Initial.MerchelloDatabaseSchemaResult">
+            <summary>
+            Class to override Umbraco DatabaseSchemaResult with Merchello specifics
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.Initial.MerchelloDatabaseSchemaResult.DetermineInstalledVersion">
+            <summary>
+            Determines the version of the currently installed database.
+            </summary>
+            <returns>
+            A <see cref="T:System.Version"/> with Major and Minor values for 
+            non-empty database, otherwise "0.0.0" for empty databases.
+            </returns>
+        </member>
+        <member name="P:Merchello.Core.Persistence.Migrations.Initial.MerchelloDatabaseSchemaResult.MerchelloErrors">
+            <summary>
+            Gets or sets the merchello errors.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Persistence.Migrations.Initial.MerchelloDatabaseSchemaResult.DbIndexDefinitions">
+            <summary>
+            Gets or sets the database index definitions.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Persistence.Migrations.Initial.MerchelloDatabaseSchemaResult.TypeFields">
+            <summary>
+            Gets or sets the type fields.
+            </summary>
+            <remarks>
+            These can be helpful when determining the Merchello Version
+            </remarks>
+        </member>
+        <member name="P:Merchello.Core.Persistence.Migrations.Initial.MerchelloDatabaseSchemaResult.StoreSettings">
+            <summary>
+            Gets or sets the store settings.
+            </summary>
+            <remarks>
+            These can be helpful when determining the Merchello Version
+            </remarks>
+        </member>
+        <member name="T:Merchello.Core.Persistence.Migrations.CoreMigrationManager">
+            <summary>
+            The merchello upgrade helper.
+            </summary>
+        </member>
+        <member name="F:Merchello.Core.Persistence.Migrations.CoreMigrationManager._database">
+            <summary>
+            The <see cref="T:Umbraco.Core.Persistence.Database"/>.
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.CoreMigrationManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Merchello.Core.Persistence.Migrations.CoreMigrationManager"/> class.
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.CoreMigrationManager.#ctor(Umbraco.Core.Persistence.Database)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Merchello.Core.Persistence.Migrations.CoreMigrationManager"/> class.
+            </summary>
+            <param name="database">
+            The database.
+            </param>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.CoreMigrationManager.EnsureMerchelloVersion">
+            <summary>
+            Checks the binary version against the web.config configuration status version.
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.CoreMigrationManager.UpgradeMerchello(Umbraco.Core.Persistence.Database)">
+            <summary>
+            Executes the Migration runner.
+            </summary>
+            <param name="database">
+            The database.
+            </param>
+            <returns>
+            A value indicating whether or not the migration was successful.
+            </returns>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.CoreMigrationManager.EnsureMigrationKey(Merchello.Core.Persistence.Migrations.Initial.MerchelloDatabaseSchemaResult)">
+            <summary>
+            The ensure migration key.
+            </summary>
+            <param name="schemaResult">
+            The schema result.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.CoreMigrationManager.InsertMigrationKey(System.String)">
+            <summary>
+            The insert migration key.
+            </summary>
+            <param name="migrationKey">
+            The migration key.
+            </param>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.CoreMigrationManager.OnUpgraded(Merchello.Core.Persistence.Migrations.Analytics.MigrationRecord)">
+            <summary>
+            The on upgraded.
+            </summary>
+            <param name="record">
+            The record.
+            </param>
+        </member>
+        <member name="E:Merchello.Core.Persistence.Migrations.CoreMigrationManager.Upgraded">
+            <summary>
+            The upgraded event.
+            </summary>
+        </member>
+        <member name="T:Merchello.Core.Persistence.Migrations.CoreMigrationManager.UpgradedEventHandler">
+            <summary>
+            The delegate for the upgraded event handler.
+            </summary>
+            <param name="sender">
+            The sender.
+            </param>
+            <param name="e">
+            The <see cref="T:Merchello.Core.Events.MerchelloMigrationEventArgs"/>.
+            </param>
+        </member>
+        <member name="T:Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneEightTwo.InsertNewMerchelloSettingsMigrationKey">
+            <summary>
+            The insert new type field data for Merchello version 1.8.2.
+            </summary>
+        </member>
+        <member name="F:Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneEightTwo.InsertNewMerchelloSettingsMigrationKey._database">
+            <summary>
+            The <see cref="T:Umbraco.Core.Persistence.Database"/>.
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneEightTwo.InsertNewMerchelloSettingsMigrationKey.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneEightTwo.InsertNewMerchelloSettingsMigrationKey"/> class.
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneEightTwo.InsertNewMerchelloSettingsMigrationKey.#ctor(Umbraco.Core.Persistence.Database)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneEightTwo.InsertNewMerchelloSettingsMigrationKey"/> class.
+            </summary>
+            <param name="database">
+            The <see cref="T:Umbraco.Core.Persistence.Database"/>.
+            </param>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneEightTwo.InsertNewMerchelloSettingsMigrationKey.Up">
+            <summary>
+            Upgrade migration
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneEightTwo.InsertNewMerchelloSettingsMigrationKey.Down">
+            <summary>
+            Downgrade migration
+            </summary>
+            <exception cref="T:Merchello.Core.Persistence.Migrations.DataLossException">
+            Throws a data loss exception
+            </exception>
         </member>
         <member name="T:Merchello.Core.Persistence.Querying.QueryExtensions">
             <summary>
@@ -9240,25 +9522,38 @@
             Represents the OrderLineItemFactory
             </summary>
         </member>
-        <member name="M:Merchello.Core.Persistence.Migrations.DatabaseSchemaHelper.VerifyDatabaseSchema(Umbraco.Core.Persistence.Database)">
+        <member name="T:Merchello.Core.Persistence.Migrations.DatabaseSchemaHelper">
             <summary>
-            Determines if the database schema needs to be upgraded with a version update
+            The database schema helper.
             </summary>
         </member>
-        <member name="T:Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneOneZero.AddShippedDateColumn">
+        <member name="M:Merchello.Core.Persistence.Migrations.DatabaseSchemaHelper.UninstallDatabaseSchema(Umbraco.Core.Persistence.Database,System.Collections.Generic.Dictionary{System.Int32,System.Type},System.String)">
             <summary>
-            Adds the shippedDate field to the shipment table
+            The uninstall database schema.
             </summary>
+            <param name="database">
+            The database.
+            </param>
+            <param name="orderedTables">
+            The ordered tables.
+            </param>
+            <param name="version">
+            The version.
+            </param>
         </member>
-        <member name="T:Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneOneZero.CreateOneOneZeroTables">
+        <member name="M:Merchello.Core.Persistence.Migrations.DatabaseSchemaHelper.InitializeDatabaseSchema(Umbraco.Core.Persistence.Database,System.Collections.Generic.Dictionary{System.Int32,System.Type},System.String)">
             <summary>
-            Represents the creation of new database table introduced in Merchello 1.1.0
+            The initialize database schema.
             </summary>
-        </member>
-        <member name="T:Merchello.Core.Persistence.Migrations.Upgrades.TargetVersionOneOneZero.InsertNewTypeFieldData">
-            <summary>
-            Represents the initial data creation by running Insert for the version 1.1.0 default data.
-            </summary>
+            <param name="database">
+            The database.
+            </param>
+            <param name="orderedTables">
+            The ordered tables.
+            </param>
+            <param name="migrationName">
+            The migration name.
+            </param>
         </member>
         <member name="T:Merchello.Core.Persistence.Repositories.IInvoiceLineItemRepository">
             <summary>
@@ -10045,9 +10340,28 @@
             <returns>
             The <see cref="T:System.String"/>.
             </returns>
-            <remarks>
-            TODO look at if this can be introduced to the MembershipHelper (Umbraco)
-            </remarks>
+        </member>
+        <member name="M:Merchello.Core.Cache.CacheKeys.CustomerMembershipUserName(System.Guid)">
+            <summary>
+            CacheKey for request cache only.  Used to store the membership username / login name
+            </summary>
+            <param name="entityKey">
+            The entity key.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:Merchello.Core.Cache.CacheKeys.CustomerMembershipProviderKey(System.Guid)">
+            <summary>
+            CacheKey for request cache only.  Used to store the membership provider key or id
+            </summary>
+            <param name="entityKey">
+            The entity key.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
         </member>
         <member name="M:Merchello.Core.Cache.CacheKeys.EnsureIsLoggedInCustomerValidated(System.Guid)">
             <summary>
@@ -10250,25 +10564,28 @@
             Gets/sets the value associated with the setting.
             </summary>
         </member>
+        <member name="T:Merchello.Core.Configuration.Outline.StrategiesCollection">
+            <summary>
+            The strategies collection.
+            </summary>
+        </member>
+        <member name="M:Merchello.Core.Configuration.Outline.StrategiesCollection.CreateNewElement">
+            <summary>
+            Creates a new <see cref="T:Merchello.Core.Configuration.Outline.StrategyElement"/>.
+            </summary>
+            <returns>
+            The <see cref="T:System.Configuration.ConfigurationElement"/>.
+            </returns>
+        </member>
         <member name="M:Merchello.Core.Configuration.Outline.StrategiesCollection.GetElementKey(System.Configuration.ConfigurationElement)">
             <summary>
             Gets the element key for a specified configuration element when overridden in a derived class.
             </summary>
-            <param name="element"><see cref="T:Merchello.Core.Configuration.Outline.TypeFieldElement"/></param>
+            <param name="element"> Then <see cref="T:Merchello.Core.Configuration.Outline.TypeFieldElement"/></param>
         </member>
         <member name="P:Merchello.Core.Configuration.Outline.StrategiesCollection.Item(System.Object)">
             <summary>
             Default. Returns the SettingsItemsElement with the index of index from the collection
-            </summary>
-        </member>
-        <member name="P:Merchello.Core.Configuration.Outline.StrategyElement.Alias">
-            <summary>
-            Gets/sets the alias (key) value for the strategies collection element.
-            </summary>
-        </member>
-        <member name="P:Merchello.Core.Configuration.Outline.StrategyElement.Type">
-            <summary>
-            Gets/sets the type associated with the setting.
             </summary>
         </member>
         <member name="P:Merchello.Core.Configuration.Outline.TaskChainElement.Alias">
@@ -10629,6 +10946,11 @@
         <member name="P:Merchello.Core.Constants.StoreSettingKeys.GlobalShippingIsTaxableKey">
             <summary>
             Gets the global shipping is taxable key.
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Constants.StoreSettingKeys.MigrationKey">
+            <summary>
+            Gets the migration key.
             </summary>
         </member>
         <member name="T:Merchello.Core.Constants.TypeFieldKeys">
@@ -18670,6 +18992,35 @@
             The <see cref="T:Umbraco.Core.Persistence.Page`1"/>.
             </returns>
         </member>
+        <member name="M:Merchello.Core.Persistence.Repositories.InvoiceRepository.SearchKeys(System.String,System.DateTime,System.DateTime,System.Int64,System.Int64,System.String,Merchello.Core.Persistence.Querying.SortDirection)">
+            <summary>
+            Performs a search by term and a date rang
+            </summary>
+            <param name="searchTerm">
+            The search term.
+            </param>
+            <param name="startDate">
+            The start date.
+            </param>
+            <param name="endDate">
+            The end date.
+            </param>
+            <param name="page">
+            The page.
+            </param>
+            <param name="itemsPerPage">
+            The items per page.
+            </param>
+            <param name="orderExpression">
+            The order expression.
+            </param>
+            <param name="sortDirection">
+            The sort direction.
+            </param>
+            <returns>
+            The <see cref="T:Umbraco.Core.Persistence.Page`1"/>.
+            </returns>
+        </member>
         <member name="M:Merchello.Core.Persistence.Repositories.InvoiceRepository.GetMaxDocumentNumber">
             <summary>
             The get max document number.
@@ -18774,6 +19125,17 @@
             </param>
             <returns>
             The <see cref="T:Merchello.Core.Models.OrderCollection"/>.
+            </returns>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Repositories.InvoiceRepository.BuildInvoiceSearchSql(System.String)">
+            <summary>
+            Builds an invoice search query.
+            </summary>
+            <param name="searchTerm">
+            The search term.
+            </param>
+            <returns>
+            The <see cref="T:Umbraco.Core.Persistence.Sql"/>.
             </returns>
         </member>
         <member name="T:Merchello.Core.Persistence.Repositories.ProductRepository">
@@ -19541,6 +19903,17 @@
             The root directory.
             </summary>
         </member>
+        <member name="M:Merchello.Core.Configuration.MerchelloConfiguration.GetPluggableObjectElement(System.String)">
+            <summary>
+            Gets a pluggable object configuration element.
+            </summary>
+            <param name="alias">
+            The alias.
+            </param>
+            <returns>
+            The <see cref="T:Merchello.Core.Configuration.Outline.PluggableObjectElement"/>.
+            </returns>
+        </member>
         <member name="M:Merchello.Core.Configuration.MerchelloConfiguration.GetStrategyElement(System.String)">
             <summary>
             Gets the <see cref="T:Merchello.Core.Configuration.Outline.StrategyElement"/> by it's configuration alias
@@ -19600,6 +19973,11 @@
             Gets or sets the configuration status. This will return the version number of the currently installed merchello instance.
             </summary>
             <value>The configuration status.</value>
+        </member>
+        <member name="P:Merchello.Core.Configuration.MerchelloConfiguration.ConfigurationStatusVersion">
+            <summary>
+            Gets the configuration status version.
+            </summary>
         </member>
         <member name="P:Merchello.Core.Configuration.MerchelloConfiguration.Section">
             <summary>
@@ -24617,26 +24995,6 @@
             The <see cref="T:System.Int32"/> representing the count of invoices.
             </returns>
         </member>
-        <member name="M:Merchello.Core.Services.IInvoiceService.GetPage(System.Int64,System.Int64,System.String,Merchello.Core.Persistence.Querying.SortDirection)">
-            <summary>
-            Gets a <see cref="T:Umbraco.Core.Persistence.Page`1"/>
-            </summary>
-            <param name="page">
-            The page.
-            </param>
-            <param name="itemsPerPage">
-            The items per page.
-            </param>
-            <param name="sortBy">
-            The sort by.
-            </param>
-            <param name="sortDirection">
-            The sort direction.
-            </param>
-            <returns>
-            The <see cref="T:Umbraco.Core.Persistence.Page`1"/>.
-            </returns>
-        </member>
         <member name="M:Merchello.Core.Services.IInvoiceService.GetInvoiceStatusByKey(System.Guid)">
             <summary>
             Gets an <see cref="T:Merchello.Core.Models.IInvoiceStatus"/> by it's key
@@ -25937,6 +26295,38 @@
             The search is prefabricated in the repository
             </remarks>
         </member>
+        <member name="M:Merchello.Core.Services.InvoiceService.GetPagedKeys(System.String,System.DateTime,System.DateTime,System.Int64,System.Int64,System.String,Merchello.Core.Persistence.Querying.SortDirection)">
+            <summary>
+            Gets a page by search term and a date range
+            </summary>
+            <param name="searchTerm">
+            The search term.
+            </param>
+            <param name="startDate">
+            The start date.
+            </param>
+            <param name="endDate">
+            The end date.
+            </param>
+            <param name="page">
+            The page.
+            </param>
+            <param name="itemsPerPage">
+            The items per page.
+            </param>
+            <param name="sortBy">
+            The sort by.
+            </param>
+            <param name="sortDirection">
+            The sort direction.
+            </param>
+            <returns>
+            The <see cref="T:System.Web.UI.Page"/>.
+            </returns>
+            <remarks>
+            The search is prefabricated in the repository
+            </remarks>
+        </member>
         <member name="M:Merchello.Core.Services.InvoiceService.GetPagedKeys(Umbraco.Core.Persistence.Querying.IQuery{Merchello.Core.Models.IInvoice},System.Int64,System.Int64,System.String,Merchello.Core.Persistence.Querying.SortDirection)">
             <summary>
             Gets a page by query.
@@ -26472,6 +26862,17 @@
             <param name="product">
             The product.
             </param>
+        </member>
+        <member name="M:Merchello.Core.Services.ProductService.GetProductOnSaleValue(Merchello.Core.Models.IProduct)">
+            <summary>
+            Gets the product for a product with variants.
+            </summary>
+            <param name="product">
+            The product.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/>.
+            </returns>
         </member>
         <member name="E:Merchello.Core.Services.ProductService.Creating">
             <summary>
@@ -28475,20 +28876,6 @@
             Gets the products.
             </summary>
         </member>
-        <member name="T:Merchello.Core.Persistence.Migrations.Initial.PluginDatabaseSchemaResult">
-            <summary>
-            Class to override Umbraco's DatabaseSchemaResult with Merchello specifics
-            </summary>
-        </member>
-        <member name="M:Merchello.Core.Persistence.Migrations.Initial.PluginDatabaseSchemaResult.DetermineInstalledVersion">
-            <summary>
-            Determines the version of the currently installed database.
-            </summary>
-            <returns>
-            A <see cref="T:System.Version"/> with Major and Minor values for 
-            non-empty database, otherwise "0.0.0" for empty databases.
-            </returns>
-        </member>
         <member name="T:Merchello.Core.Persistence.Migrations.Initial.BaseDataCreation">
             <summary>
             Represents the initial data creation by running Insert for the base data.
@@ -28759,6 +29146,11 @@
             Gets or sets a value indicating whether logging is enabled
             </summary>
         </member>
+        <member name="P:Merchello.Core.Configuration.Outline.MerchelloSection.EnableInstallTracking">
+            <summary>
+            Gets or sets a value indicating whether or not installs and upgrades can be tracked.
+            </summary>
+        </member>
         <member name="P:Merchello.Core.Configuration.Outline.MerchelloSection.LogLocalization">
             <summary>
             Gets or sets the log localization defaults to "en"
@@ -28782,6 +29174,11 @@
         <member name="P:Merchello.Core.Configuration.Outline.MerchelloSection.RegionalProvinces">
             <summary>
             Gets the RegionalProvince collection
+            </summary>
+        </member>
+        <member name="P:Merchello.Core.Configuration.Outline.MerchelloSection.Pluggable">
+            <summary>
+            Gets the pluggable collection.
             </summary>
         </member>
         <member name="P:Merchello.Core.Configuration.Outline.MerchelloSection.Strategies">
@@ -29792,6 +30189,14 @@
             <summary>
             Validates the schema of the current database
             </summary>
+        </member>
+        <member name="M:Merchello.Core.Persistence.Migrations.Initial.DatabaseSchemaCreation.LoadMerchelloData(Merchello.Core.Persistence.Migrations.Initial.MerchelloDatabaseSchemaResult)">
+            <summary>
+            The load merchello data.
+            </summary>
+            <param name="result">
+            The result.
+            </param>
         </member>
         <member name="M:Merchello.Core.Persistence.Migrations.Initial.DatabaseSchemaCreation.FireBeforeCreation(Merchello.Core.Events.DatabaseCreationEventArgs)">
             <summary>
