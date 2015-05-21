@@ -29,6 +29,10 @@ body, h1, h2, h3, h3, h5, p, li, a, div {
 
 html {
     font-size: 62.5%;
+
+    @include smartphone-only {
+        font-size: 60%;
+    }
 }
 
 body {
@@ -124,9 +128,11 @@ div#products {
         margin-right: 3px;
     }
 }
+
 .description {
     border-bottom: 1px solid #dcd4c6;
 }
+
 .sale-price {
     text-decoration: none;
     color: $error-color;
@@ -167,6 +173,11 @@ section.nav {
             float: right;
             padding: $default-spacing $default-spacing + 10;
 
+            @include smartphone-only {
+                a:first-child {
+                    display: none;
+                }
+            }
 
             a {
                 padding-left: $default-spacing;
@@ -180,9 +191,17 @@ section.nav {
             width: 40%;
             text-align: center;
 
+            @include smartphone-only {
+                width: 100%;
+            }
+
             img {
                 width: 45%;
                 height: auto;
+
+                @include smartphone-only {
+                    width: 72%;
+                }
             }
         }
     }
@@ -191,6 +210,7 @@ section.nav {
         background-color: $accent-color;
         bottom: 0;
         position: absolute;
+
 
         a {
             -webkit-transition: color 0.2s ease-in;
@@ -211,6 +231,16 @@ section.nav {
         }
 
         .nav-items {
+            @include smartphone-only {
+                /*display: none;*/
+                position: fixed;
+                top: 0;
+                width: 75%;
+                background-color: yellow;
+                height: 100%;
+                z-index: 9;
+            }
+
             text-align: center;
             height: $section-height;
 
@@ -220,9 +250,12 @@ section.nav {
 
             li {
                 display: inline-block;
-                height: 100%;
                 padding-left: $default-spacing;
                 padding-right: $default-spacing;
+                height:100%;
+                @include smartphone-only {
+                    display: block;
+                }
 
                 a {
                     @include vertical-center(25%);
@@ -231,6 +264,9 @@ section.nav {
         }
 
         li.has-dropdown {
+            @include smartphone-only{
+                position:relative;
+            }
             > a {
                 &:after {
                     font-family: FontAwesome;
@@ -241,12 +277,18 @@ section.nav {
 
             &:hover ul.dropdown {
                 max-height: $section-height;
+                @include smartphone-only{
+                    max-height: 250px;               
+                }
             }
+
+
 
             ul.dropdown {
                 background-color: $primary-color;
                 overflow-y: hidden;
-                max-height: 0;
+                max-height:0;
+                height:auto;
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -265,6 +307,10 @@ section.nav {
                         color: rgba(255, 255, 255, 1);
                     }
                 }
+
+                li{
+                    height: $section-height;
+                }
             }
         }
     }
@@ -272,6 +318,10 @@ section.nav {
 
 section#hero {
     height: $hero-height;
+
+    @include smartphone-only {
+        height: 180px;
+    }
 
     .hero-image {
         height: 100%;
@@ -287,19 +337,41 @@ section#hero {
 section#categories {
     height: $categories-height;
 
+    @include smartphone-only {
+        height: auto;
+    }
+
     .container {
         height: 100%;
         position: relative;
+    }
+
+    .home-message {
+        @include smartphone-only {
+            padding-bottom: $default-spacing*2;
+        }
     }
 
     .home-links {
         position: absolute;
         bottom: $default-spacing * 2;
 
+        @include smartphone-only {
+            position: relative;
+            padding-top: $default-spacing;
+
+            > [class*="col-"] {
+                padding: 0;
+            }
+        }
+
         .home-link {
-            max-height: $categories-height/2;
             width: 100%;
             position: relative;
+
+            @include non-smartphone {
+                max-height: 40vh;
+            }
 
             img {
                 width: 100%;
@@ -318,6 +390,10 @@ section#categories {
                 -o-transition: background-color ease-in $transition-timing;
                 -webkit-transition: background-color ease-in $transition-timing;
                 transition: background-color ease-in $transition-timing;
+
+                @include smartphone-only {
+                    height: 65px;
+                }
 
                 &:hover {
                     background-color: rgba(255, 255, 255, 0.7);
@@ -344,9 +420,18 @@ section#footer {
     padding: $default-spacing;
     color: $footer-text-color;
 
+    @include smartphone-only {
+        height: auto;
+        margin-top: -$default-spacing*2;
+    }
+
     .copy-right {
         position: absolute;
         bottom: $default-spacing;
+
+        @include smartphone-only {
+            position: static;
+        }
     }
 
     h5 {

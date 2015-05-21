@@ -60,3 +60,9 @@
 		@content
 	}
 }
+
+@mixin non-smartphone{
+    @media only screen and (min-width : 481){
+        @content
+    }
+}
