@@ -252,7 +252,7 @@ section.nav {
 
 
         @include non-smartphone {
-            display: none;
+            display: none !important;
         }
     }
 

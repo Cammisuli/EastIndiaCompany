@@ -165,9 +165,9 @@ section.nav {
         -o-transform: rotate3d(0, 0, 1, -45deg);
         -webkit-transform: rotate3d(0, 0, 1, -45deg);
         transform: rotate3d(0, 0, 1, -45deg); }
-    @media only screen and (min-width: 481) {
+    @media only screen and (min-width: 481px) {
       section.nav .mobile-nav {
-        display: none; } }
+        display: none !important; } }
   section.nav .top, section.nav .middle, section.nav .bottom {
     margin: 0;
     position: relative;
@@ -325,7 +325,7 @@ section#categories {
     section#categories .home-links .home-link {
       width: 100%;
       position: relative; }
-      @media only screen and (min-width: 481) {
+      @media only screen and (min-width: 481px) {
         section#categories .home-links .home-link {
           max-height: 40vh; } }
       section#categories .home-links .home-link img {

@@ -62,7 +62,7 @@
 }
 
 @mixin non-smartphone{
-    @media only screen and (min-width : 481){
+    @media only screen and (min-width : 481px){
         @content
     }
 }
