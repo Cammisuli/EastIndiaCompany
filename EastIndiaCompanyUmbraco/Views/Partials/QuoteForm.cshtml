@@ -1,0 +1,46 @@
+﻿@using System.Web.Mvc.Html
+@using ClientDependency.Core.Mvc
+@using Umbraco.Web
+@model EastIndiaCompanyUmbraco.models.QuoteModel
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+
+    Html.RequiresJs("/umbraco_client/ui/jquery.js");
+    Html.RequiresJs("/umbraco_client/Application/JQuery/jquery.validate.min.js");
+    Html.RequiresJs("/umbraco_client/Application/JQuery/jquery.validate.unobtrusive.min.js");
+}
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["success"]
+    </div>  
+}
+@Html.RenderJsHere()
+@using (Html.BeginUmbracoForm<EastIndiaCompanyUmbraco.SurfaceControllers.QuoteSurfaceController>("index"))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(x => x.ProductId)
+    <div class="form-group">
+        @Html.LabelFor(x => x.Name, new { @class = "control-label" })
+        @Html.ValidationMessageFor(x => x.Name)
+        <div class="controls">
+            @Html.TextBoxFor(x => x.Name, new { @placeholder = "Enter your name", @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Email, new { @class = "control-label" })
+        @Html.ValidationMessageFor(x => x.Email)
+        <div class="controls">
+            @Html.TextBoxFor(x => x.Email, new { @placeholder = "Enter your email", @class = "form-control", @type = "email" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Comments, new { @class = "control-label" })
+        @Html.ValidationMessageFor(x => x.Comments)
+        <div class="controls">
+            @Html.TextAreaFor(model => model.Comments, new { @class = "form-control" })
+        </div>
+    </div>
+    <button class="btn btn-default">Submit</button>
+}

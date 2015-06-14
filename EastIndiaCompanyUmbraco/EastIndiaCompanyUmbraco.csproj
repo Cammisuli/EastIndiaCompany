@@ -502,6 +502,9 @@
     <Content Include="App_Data\packages\installed\installedPackages.config" />
     <Content Include="App_Data\access.config" />
     <None Include="Properties\PublishProfiles\EastIndia.pubxml" />
+    <Content Include="Views\EastIndiaProduct.cshtml" />
+    <Content Include="Views\EastIndiaProductGroup.cshtml" />
+    <Content Include="Views\Partials\QuoteForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3141,7 +3144,9 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="models\QuoteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SurfaceControllers\QuoteSurfaceController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\TEMP\FileUploads\" />

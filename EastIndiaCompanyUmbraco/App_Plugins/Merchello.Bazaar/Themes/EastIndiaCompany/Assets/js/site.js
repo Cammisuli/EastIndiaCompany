@@ -15,8 +15,8 @@ $(function () {
 
     // mobile navigation
     var nav = $(".nav-items");
-    var navwidth = nav.width();
-    setTranslate(nav, -navwidth - 32);
+    //var navwidth = nav.width();
+    //setTranslate(nav, -navwidth - 32);
     setTimeout(function() {
         nav.css("visibility", "visible");
     }, 300);
@@ -24,7 +24,7 @@ $(function () {
     $(".lines-button").click(function () {
         $(this).toggleClass("ani");
         if (open) {
-            setTranslate(nav, -navwidth - 32);
+            setTranslate(nav, -1935);
             open = false;
         } else {
             setTranslate(nav, 0);

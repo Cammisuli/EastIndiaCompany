@@ -43,10 +43,10 @@ div#products {
     div#products .product .info {
       padding: 5px 15px 15px 15px;
       background-color: white;
-      -moz-transition: background-color ease-in 0.26s;
-      -o-transition: background-color ease-in 0.26s;
-      -webkit-transition: background-color ease-in 0.26s;
-      transition: background-color ease-in 0.26s; }
+      -moz-transition: background-color ease-in 0.36s;
+      -o-transition: background-color ease-in 0.36s;
+      -webkit-transition: background-color ease-in 0.36s;
+      transition: background-color ease-in 0.36s; }
 
 .sale {
   position: relative; }
@@ -85,7 +85,8 @@ section.nav {
   height: 23.5vh;
   font-size: 1.5rem;
   text-transform: none;
-  position: relative; }
+  position: relative;
+  z-index: 999; }
   section.nav .mobile-nav {
     position: absolute;
     z-index: 10; }
@@ -222,6 +223,13 @@ section.nav {
     section.nav .bottom .nav-items {
       text-align: center;
       height: 45px; }
+      @media only screen and (min-width: 481px) {
+        section.nav .bottom .nav-items {
+          -moz-transform: translate3d(0, 0, 0) !important;
+          -ms-transform: translate3d(0, 0, 0) !important;
+          -o-transform: translate3d(0, 0, 0) !important;
+          -webkit-transform: translate3d(0, 0, 0) !important;
+          transform: translate3d(0, 0, 0) !important; } }
       @media only screen and (max-width: 480px) {
         section.nav .bottom .nav-items {
           position: fixed;
@@ -235,10 +243,15 @@ section.nav {
           -webkit-box-shadow: 11px 0px 32px -7px rgba(0, 0, 0, 0.75);
           -moz-box-shadow: 11px 0px 32px -7px rgba(0, 0, 0, 0.75);
           box-shadow: 11px 0px 32px -7px rgba(0, 0, 0, 0.75);
-          -o-transition: all ease-in-out 0.26s;
-          -webkit-transition: all ease-in-out 0.26s;
-          -moz-transition: all ease-in-out 0.26s;
-          transition: all ease-in-out 0.26s; } }
+          -moz-transform: translate3d(-1935px, 0, 0);
+          -ms-transform: translate3d(-1935px, 0, 0);
+          -o-transform: translate3d(-1935px, 0, 0);
+          -webkit-transform: translate3d(-1935px, 0, 0);
+          transform: translate3d(-1935px, 0, 0);
+          -o-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.7s;
+          -webkit-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.7s;
+          -moz-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.7s;
+          transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.7s; } }
       section.nav .bottom .nav-items ul {
         height: 45px; }
       section.nav .bottom .nav-items li {
@@ -278,10 +291,10 @@ section.nav {
       left: 0;
       right: 0;
       z-index: 999;
-      -moz-transition: all ease-out 0.26s;
-      -o-transition: all ease-out 0.26s;
-      -webkit-transition: all ease-out 0.26s;
-      transition: all ease-out 0.26s; }
+      -moz-transition: all ease-out 0.36s;
+      -o-transition: all ease-out 0.36s;
+      -webkit-transition: all ease-out 0.36s;
+      transition: all ease-out 0.36s; }
       section.nav .bottom li.has-dropdown ul.dropdown a {
         color: rgba(255, 255, 255, 0.8); }
         section.nav .bottom li.has-dropdown ul.dropdown a:hover, section.nav .bottom li.has-dropdown ul.dropdown a:active, section.nav .bottom li.has-dropdown ul.dropdown a:focus {
@@ -339,10 +352,10 @@ section#categories {
         text-align: center;
         position: absolute;
         bottom: 0;
-        -moz-transition: background-color ease-in 0.26s;
-        -o-transition: background-color ease-in 0.26s;
-        -webkit-transition: background-color ease-in 0.26s;
-        transition: background-color ease-in 0.26s; }
+        -moz-transition: background-color ease-in 0.36s;
+        -o-transition: background-color ease-in 0.36s;
+        -webkit-transition: background-color ease-in 0.36s;
+        transition: background-color ease-in 0.36s; }
         @media only screen and (max-width: 480px) {
           section#categories .home-links .home-link .link {
             height: 65px; } }
@@ -380,10 +393,10 @@ section#footer {
     text-align: center; }
   section#footer li {
     cursor: pointer;
-    -moz-transition: color ease-in 0.26s;
-    -o-transition: color ease-in 0.26s;
-    -webkit-transition: color ease-in 0.26s;
-    transition: color ease-in 0.26s; }
+    -moz-transition: color ease-in 0.36s;
+    -o-transition: color ease-in 0.36s;
+    -webkit-transition: color ease-in 0.36s;
+    transition: color ease-in 0.36s; }
     section#footer li:hover {
       color: #666666; }
 
@@ -435,5 +448,3 @@ a {
   color: #be5754; }
   a:hover, a:active, a:focus {
     color: #be5754; }
-
-/*# sourceMappingURL=styles.css.map */

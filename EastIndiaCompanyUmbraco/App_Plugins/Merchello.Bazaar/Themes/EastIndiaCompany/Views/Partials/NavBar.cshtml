@@ -4,7 +4,11 @@
 @using Merchello.Core.Models
 @using Merchello.Web
 @using Umbraco.Web
+@{
+    // get all product folders
+    var folders = Model.AncestorOrSelf(1).Children.Where(c => c.DocumentTypeAlias.Equals("folder", StringComparison.OrdinalIgnoreCase));
 
+}
 <section class="nav">
     <div class="top">
         <div class="search">
@@ -28,11 +32,11 @@
                 {
                     <a href="@purchaseHistory.Url">Purchase History</a>
                 }
-                @Html.ActionLink("Logout", "HandleSignOut", "MembershipOperations", new {area = "Bazaar"}, null)
+                @Html.ActionLink("Logout", "HandleSignOut", "MembershipOperations", new { area = "Bazaar" }, null)
             }
             @if (!Model.CurrentCustomer.IsAnonymous && Model.ShowWishList)
             {
-                <a href="@Model.WishListPage.Url">Wish List (@(((ICustomer) Model.CurrentCustomer).WishList().TotalItemCount))</a>
+                <a href="@Model.WishListPage.Url">Wish List (@(((ICustomer)Model.CurrentCustomer).WishList().TotalItemCount))</a>
             }
             <a href="@Model.BasketPage.Url"><i class="fa fa-shopping-cart"></i> Basket (@Model.CurrentCustomer.Basket().TotalItemCount)</a>
         </div>
@@ -40,26 +44,31 @@
     <div class="middle">
         <div class="logo">
             <a href="@Model.StorePage.Url">
-                <img src="~/logo.png" alt="@Model.StoreTitle"/>
+                <img src="~/logo.png" alt="@Model.StoreTitle" />
             </a>
         </div>
     </div>
     <div class="bottom">
         <div class="nav-items">
             <ul>
-                <li class="has-dropdown">
-                    <a href="#">Products</a>
-                    <ul class="dropdown">
-                        @foreach (var group in Model.ProductGroups)
-                        {
-                            <li><a href="@group.Url">@group.Name</a></li>
-                        }
-                    </ul>
-                </li>
+                @foreach (var folder in folders)
+                {
+                    <li class="has-dropdown">
+
+                        <a href="#">@folder.Name</a>
+                        <ul class="dropdown">
+                            @foreach (var group in folder.Children)
+                            {
+                                <li><a href="@group.Url">@group.Name</a></li>
+                            }
+                        </ul>
+                    </li>
+                }              
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
+
         </div>
     </div>
 </section>
