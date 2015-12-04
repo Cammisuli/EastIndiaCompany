@@ -24,6 +24,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -216,7 +217,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\TEMP\ClientDependency\JON-PC-2425ef590db2146ea9ff2bcbe7bd3245-map.xml" />
     <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Assets\js\site.js" />
     <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Assets\js\site.min.js">
       <DependentUpon>site.js</DependentUpon>
@@ -398,106 +398,6 @@
       <DependentUpon>site.min.js</DependentUpon>
     </Content>
     <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Views\Partials\Footer.cshtml" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\segments_u" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k.fdt" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k.fdx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k.fnm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k.frq" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k.nrm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k.prx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k.tii" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k.tis" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k.tvd" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k.tvf" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k.tvx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_k_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_l.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_l_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_m.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_m_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_n.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_o.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_p.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_p_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\_q.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\segments_6" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\write.lock" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\_0.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\_1.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\_1_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\_2.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\_2_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\_3.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\_3_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\_4.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\segments_19" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14.fdt" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14.fdx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14.fnm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14.frq" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14.nrm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14.prx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14.tii" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14.tis" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14.tvd" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14.tvf" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14.tvx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_14_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_15.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_16.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_17.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_17_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_18.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_18_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\_19.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\segments_8" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\write.lock" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_0.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_0_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_1.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_2.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_2_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_3.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_3_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_4.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_4_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_5.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_5_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Customer\Index\_6.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Invoice\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Invoice\Index\segments_1" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Order\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Order\Index\segments_1" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\segments_1a" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\write.lock" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14.fdt" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14.fdx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14.fnm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14.frq" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14.nrm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14.prx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14.tii" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14.tis" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14.tvd" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14.tvf" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14.tvx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_14_3.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_15.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_15_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_16.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_16_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_17.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_18.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_18_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_19.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Merchello\Product\Index\_19_1.del" />
-    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.JON-PC.hash" />
-    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.JON-PC.list" />
     <Content Include="App_Data\packages\created\createdPackages.config" />
     <Content Include="App_Data\packages\installed\installedPackages.config" />
     <Content Include="App_Data\access.config" />
@@ -3149,7 +3049,6 @@
     <Compile Include="SurfaceControllers\QuoteSurfaceController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\TEMP\FileUploads\" />
     <Folder Include="css\" />
     <Folder Include="scripts\" />
     <Folder Include="usercontrols\" />
