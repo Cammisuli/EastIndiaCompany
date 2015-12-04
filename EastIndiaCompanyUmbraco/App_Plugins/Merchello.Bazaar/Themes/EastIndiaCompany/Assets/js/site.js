@@ -32,4 +32,18 @@ $(function () {
         }
     });
     
+    var navmenu = $('section.nav .bottom');
+    var navimg = $('section.nav .middle .logo img')
+    $(window).bind('scroll', function () {
+        if ($(window).scrollTop() > ($('.nav').height() - navmenu.height())) {
+            navmenu.addClass('fixed');
+            navimg.addClass('fixed');
+        } else {
+            navmenu.removeClass('fixed');
+            navimg.removeClass('fixed');
+
+        }
+    });
+
+
 });
