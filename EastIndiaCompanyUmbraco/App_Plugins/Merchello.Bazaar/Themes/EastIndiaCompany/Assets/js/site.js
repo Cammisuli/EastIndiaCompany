@@ -33,7 +33,7 @@ $(function () {
     });
     
     var navmenu = $('section.nav .bottom');
-    var navimg = $('section.nav .middle .logo img')
+    var navimg = $('section.nav .middle .logo img');
     $(window).bind('scroll', function () {
         if ($(window).scrollTop() > ($('.nav').height() - navmenu.height())) {
             navmenu.addClass('fixed');
@@ -45,5 +45,7 @@ $(function () {
         }
     });
 
-
+    // site reveal
+    window.sr = ScrollReveal();
+    sr.reveal('.home-link');
 });

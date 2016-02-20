@@ -221,6 +221,7 @@
     <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Assets\js\site.min.js">
       <DependentUpon>site.js</DependentUpon>
     </Content>
+    <Content Include="bin\Archetype.dll" />
     <Content Include="logo.png" />
     <Content Include="media\1010\img_2523.jpg" />
     <Content Include="media\1011\img_2520.jpg" />
@@ -247,7 +248,9 @@
     <Content Include="Config\ExamineIndex.config" />
     <Content Include="Config\EmbeddedMedia.config" />
     <Content Include="Config\Dashboard.config" />
-    <Content Include="Config\ClientDependency.config" />
+    <Content Include="Config\ClientDependency.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Config\BaseRestExtensions.config" />
     <Content Include="Config\applications.config" />
     <Content Include="Config\404handlers.config" />

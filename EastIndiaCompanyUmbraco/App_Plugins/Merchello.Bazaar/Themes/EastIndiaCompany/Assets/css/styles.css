@@ -358,7 +358,7 @@ section#hero {
       width: 100%; }
 
 section#categories {
-  height: 80vh; }
+  min-height: 500px; }
   @media only screen and (max-width: 480px) {
     section#categories {
       height: auto; } }
@@ -369,8 +369,7 @@ section#categories {
     section#categories .home-message {
       padding-bottom: 30px; } }
   section#categories .home-links {
-    position: absolute;
-    bottom: 30px; }
+    position: absolute; }
     @media only screen and (max-width: 480px) {
       section#categories .home-links {
         position: relative;
@@ -385,7 +384,7 @@ section#categories {
           max-height: 40vh; } }
       section#categories .home-links .home-link img {
         width: 100%;
-        height: 100%; }
+        height: 350px; }
       section#categories .home-links .home-link .link {
         width: 100%;
         height: 45px;

@@ -525,7 +525,7 @@ section#hero {
 }
 
 section#categories {
-    height: $categories-height;
+    min-height: 500px;
 
     @include smartphone-only {
         height: auto;
@@ -544,7 +544,6 @@ section#categories {
 
     .home-links {
         position: absolute;
-        bottom: $default-spacing * 2;
 
         @include smartphone-only {
             position: relative;
@@ -565,7 +564,7 @@ section#categories {
 
             img {
                 width: 100%;
-                height: 100%;
+                height: 350px;
             }
 
             .link {

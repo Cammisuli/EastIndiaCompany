@@ -1,12 +1,13 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<StoreModel>
 @using Merchello.Bazaar.Models.ViewModels
 @using Umbraco.Web
+@using Archetype.Models;
 @{
     Layout = "Master.cshtml";
 }
 <section id="hero">
     <div class="hero-image">
-        <img src="http://placehold.it/1900x750" alt="" />
+        <img src="@Umbraco.TypedMedia(Model.GetPropertyValue("mainImage")).Url" alt="@Model.GetPropertyValue("mainImageDescription")" />
     </div>
 </section>
 
@@ -14,56 +15,26 @@
     <div class="container">
         <div class="row home-message">
             <div class="col-lg-12">
-                <h1>Welcome to the store!</h1>
+                <h1>@Model.GetPropertyValue("mainTitle")</h1>
                 <p>
-                    
-                    Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
-                    Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante.
-                    Fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.
-                    Sem nulla eu ultricies orci praesent id augue nec lorem pretium congue sit amet ac nunc fusce iaculis lorem eu diam hendrerit at mattis purus dignissim vivamus mauris tellus, fringilla.
+                    @Model.GetPropertyValue("mainDescription")
                 </p>
             </div>
         </div>
         <div class="row home-links">
-            <div class="col-lg-4 col-sm-12">
-                <div class="home-link">
-                    <img src="http://placehold.it/400x400" alt=""/>
-                    <div class="link">
-                        <a href="">Link 1</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <div class="home-link">
-                    <img src="http://placehold.it/400x400" alt="" />
-
-                    <div class="link">
-                        <a href="">Link 2</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <div class="home-link">
-                    <img src="http://placehold.it/400x400" alt="" />
-                    <div class="link">
-                        <a href="">Link 3</a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        @*@foreach (var group in Model.ProductGroups.Where(x => x.IsVisible()))
+            @foreach (var fieldset in Model.GetPropertyValue<ArchetypeModel>("contentLinks"))
             {
-                <span class="col-md-6">
-                    <a href="@group.Url">
-                        <h2>@group.Name</h2>
-                        @if (!string.IsNullOrEmpty(group.Image))
-                        {
-                            <img src="@group.Image" alt="@group.Name" />
-                        }
-                    </a>
-                    <p>@group.Brief</p>
-                </span>
-            }*@
+
+                <div class="col-lg-4 col-sm-12">
+                    <div class="home-link">
+                        <img src="@Umbraco.TypedMedia(fieldset.GetValue("contentImage")).Url" alt="" />
+                        <div class="link">
+                            <a href="@Umbraco.TypedContent(@fieldset.GetValue("url")).Url">@Umbraco.TypedContent(@fieldset.GetValue("url")).Name</a>
+                        </div>
+                    </div>
+                </div>
+            }
+           
+        </div>
     </div>
 </section>

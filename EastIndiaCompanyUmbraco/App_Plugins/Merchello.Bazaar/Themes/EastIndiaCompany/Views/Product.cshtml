@@ -5,7 +5,7 @@
 @using Umbraco.Web
 @{
     Layout = "Master.cshtml";
-    var quoteOnly = Model.GetPropertyValue<bool>("quote");
+    var quoteOnly = true; //Model.GetPropertyValue<bool>("quote");
 }
 <section id="content">
     <div class="container">

@@ -22,42 +22,14 @@
 
                 foreach (var product in products)
                 {
-                    if (!product.GetPropertyValue<bool>("quote"))
-                    {
-
-                        <div class="col-md-3 product @(product.ProductData.OnSale ? "sale" : "")">
-                            <a href="@product.Url">
-                                <img src="@product.GetCropUrl(propertyAlias: "image", height: 400)">
-                                <div class="info">
-                                    <span class="name">@product.ProductData.Name.ToUpper() / </span>
-                                    @if (product.ProductData.ProductVariants.Any())
-                                    {
-                                        var price = product.FormattedPrice().Split('-')[0].Trim();
-                                        <span>From @price</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="original-price">@product.FormattedPrice()</span>
-                                        if (product.ProductData.OnSale)
-                                        {
-                                            <span class="sale-price">@product.FormattedSalePrice()</span>
-                                        }
-                                    }
-                                </div>
-                            </a>
-                        </div>
-                    }
-                    else
-                    {
-                        <div class="col-md-3 product">
-                            <a href="@product.Url">
-                                <img src="@product.GetCropUrl(propertyAlias: "image", height: 400)">
-                                <div class="info">
-                                    <span class="name">@product.Name </span>                                   
-                                </div>
-                            </a>
-                        </div>
-                    }
+                    <div class="col-md-3 product">
+                        <a href="@product.Url">
+                            <img src="@product.GetCropUrl(propertyAlias: "image", height: 400)">
+                            <div class="info">
+                                <span class="name">@product.Name </span>
+                            </div>
+                        </a>
+                    </div>
                 }
             }
             else

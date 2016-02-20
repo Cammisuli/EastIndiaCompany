@@ -11,34 +11,17 @@
 }
 <section class="nav">
     <div class="top">
-        <div class="search">
+        @* TODO: add search functionality *@
+        @*<div class="search">
             Search <i class="fa fa-search"></i>
-        </div>
+        </div>*@
         <div class="mobile-nav">
             <span class="lines-button x" type="button" role="button" aria-label="Toggle Navigation">
                 <span class="lines"></span>
             </span>
         </div>
         <div class="account-info">
-            @if (Model.CurrentCustomer.IsAnonymous)
-            {
-                <a href="@Model.RegistrationPage.Url">Register / Login</a>
-            }
-            else
-            {
-                <a href="@Model.AccountPage.Url">Account</a>
-                var purchaseHistory = Model.AccountPage.Descendant("BazaarAccountHistory");
-                if (purchaseHistory != null)
-                {
-                    <a href="@purchaseHistory.Url">Purchase History</a>
-                }
-                @Html.ActionLink("Logout", "HandleSignOut", "MembershipOperations", new { area = "Bazaar" }, null)
-            }
-            @if (!Model.CurrentCustomer.IsAnonymous && Model.ShowWishList)
-            {
-                <a href="@Model.WishListPage.Url">Wish List (@(((ICustomer)Model.CurrentCustomer).WishList().TotalItemCount))</a>
-            }
-            <a href="@Model.BasketPage.Url"><i class="fa fa-shopping-cart"></i> Basket (@Model.CurrentCustomer.Basket().TotalItemCount)</a>
+
         </div>
     </div>
     <div class="middle">
@@ -64,7 +47,6 @@
                         </ul>
                     </li>
                 }              
-                <li><a href="#">Blog</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
