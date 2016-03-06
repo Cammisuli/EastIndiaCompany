@@ -95,6 +95,10 @@
     <Reference Include="Lucene.Net">
       <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
     </Reference>
+    <Reference Include="Merchello.Bazaar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\Merchello.Bazaar.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ApplicationBlocks.Data">
       <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\Microsoft.ApplicationBlocks.Data.dll</HintPath>
     </Reference>
@@ -404,6 +408,8 @@
     <Content Include="App_Data\packages\created\createdPackages.config" />
     <Content Include="App_Data\packages\installed\installedPackages.config" />
     <Content Include="App_Data\access.config" />
+    <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Views\Generic.cshtml" />
+    <Content Include="App_Plugins\Merchello.Bazaar\Themes\EastIndiaCompany\Views\custom404.cshtml" />
     <None Include="compilerconfig.json" />
     <Content Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -415,6 +421,7 @@
     <Content Include="Views\EastIndiaProduct.cshtml" />
     <Content Include="Views\EastIndiaProductGroup.cshtml" />
     <Content Include="Views\Partials\QuoteForm.cshtml" />
+    <Content Include="Views\Generic.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3056,6 +3063,7 @@
     <Compile Include="Global.cs" />
     <Compile Include="models\QuoteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SurfaceControllers\GenericPageController.cs" />
     <Compile Include="SurfaceControllers\QuoteSurfaceController.cs" />
   </ItemGroup>
   <ItemGroup>

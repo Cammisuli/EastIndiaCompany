@@ -15,6 +15,8 @@ $link-color: #be5754;
 
 $error-color: #E80C23;
 
+$green: #707133;
+
 $nav-height: 23.5vh;
 $hero-height: 100vh - $nav-height;
 $footer-height: 20vh;
@@ -48,7 +50,7 @@ body, h1, h2, h3, h3, h5, p, li, a, div {
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 75%;
 
     @include smartphone-only {
         font-size: 60%;
@@ -62,6 +64,10 @@ body {
 
 section#content {
     min-height: 56.4vh;
+
+    @include smartphone-only {
+        margin-bottom: 20px;
+    }
 
     .breadcrumbs {
         padding: $default-spacing;
@@ -173,6 +179,9 @@ section.nav {
     position: relative;
     z-index: 999;
 
+    @include smartphone-only {
+        height: 12vh;
+    }
 
     .mobile-nav {
         position: absolute;
@@ -298,17 +307,26 @@ section.nav {
         }
 
         .account-info {
-            float: right;
+            background-color: $link-color;
+            right: 20px;
+            top: 20px;
             padding: $default-spacing $default-spacing + 10;
-
+            position: absolute;
+            border-radius: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            a{
+                color: white;
+            }
             @include smartphone-only {
-                a:first-child {
-                    display: none;
-                }
+                display: none;
             }
 
-            a {
-                padding-left: $default-spacing;
+            &:hover {
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
             }
         }
     }
@@ -328,14 +346,20 @@ section.nav {
                 height: auto;
                 margin-top: -80px;
                 /*transition: all 1s ease-in;*/
-                @include non-smartphone {
-                    &.fixed {
-                        width: 20%;
+                &.fixed {
+                    @include non-smartphone {
+                        width: 25%;
                         position: fixed;
                         left: 0;
-                        top: 38px;
                         z-index: 9;
-                        animation: fadeIn 0.9s ease-in ;
+                        -moz-animation: fadeIn 0.9s ease-in;
+                        -o-animation: fadeIn 0.9s ease-in;
+                        -webkit-animation: fadeIn 0.9s ease-in;
+                        animation: fadeIn 0.9s ease-in;
+                    }
+
+                    @include desktop {
+                        width: 15%;
                     }
                 }
 
@@ -358,7 +382,6 @@ section.nav {
                 bottom: auto;
                 top: 0;
                 box-shadow: 0 1px 4px rgba(0,0,0,0.18);
-
                 /*.nav-items {
                     height: 105px;
 
@@ -490,11 +513,11 @@ section.nav {
                 transition: all ease-out $transition-timing;
 
                 a {
-                    color: rgba(255, 255, 255, 0.8);
+                    color: white;
 
                     &:hover, &:active, &:focus {
                         text-decoration: none;
-                        color: rgba(255, 255, 255, 1);
+                        color: $link-color;
                     }
                 }
 
@@ -599,10 +622,9 @@ section#categories {
 }
 
 section#footer {
-    $footer-text-color: lighten($font-color, 10%);
+    $footer-text-color: lighten($font-color, 50%);
 
-    height: $footer-height;
-    background-color: $primary-color-light;
+    background-color: $green;
     position: relative;
     width: 100%;
     border-top: 1px solid darken($primary-color-light, 3%);
@@ -615,7 +637,6 @@ section#footer {
     }
 
     .copy-right {
-        position: absolute;
         bottom: $default-spacing;
 
         @include smartphone-only {
@@ -724,5 +745,12 @@ a {
 
     &:hover, &:active, &:focus {
         color: $link-color;
+    }
+}
+
+
+.product-info {
+    img {
+        margin-bottom: $default-spacing;
     }
 }

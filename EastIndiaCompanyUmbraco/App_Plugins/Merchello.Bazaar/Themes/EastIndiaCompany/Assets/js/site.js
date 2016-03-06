@@ -17,7 +17,7 @@ $(function () {
     var nav = $(".nav-items");
     //var navwidth = nav.width();
     //setTranslate(nav, -navwidth - 32);
-    setTimeout(function() {
+    setTimeout(function () {
         nav.css("visibility", "visible");
     }, 300);
     var open = false;
@@ -31,7 +31,7 @@ $(function () {
             open = true;
         }
     });
-    
+
     var navmenu = $('section.nav .bottom');
     var navimg = $('section.nav .middle .logo img');
     $(window).bind('scroll', function () {
@@ -47,5 +47,15 @@ $(function () {
 
     // site reveal
     window.sr = ScrollReveal();
-    sr.reveal('.home-link');
+    sr.reveal('.logo img', {
+        distance: '30px',
+        duration: 600,
+        easing: 'ease-in-out',
+        opacity: 0,
+        scale: 1.2
+    });
+    sr.reveal('.home-link', {
+        reset: true
+    });
+
 });

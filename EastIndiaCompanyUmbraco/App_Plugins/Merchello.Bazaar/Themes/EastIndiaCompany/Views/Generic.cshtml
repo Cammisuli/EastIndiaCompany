@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<MasterModel>
+@using Merchello.Bazaar
+@using Merchello.Bazaar.Models.ViewModels
+@{
+    Layout = "Master.cshtml";
+}
+<section id="content">
+    <div class="container">
+        <h1>@Model.GetProperty("title").Value</h1>
+        <div>
+            @Html.Raw(Model.GetProperty("content").Value)
+        </div>
+    </div>
+</section>

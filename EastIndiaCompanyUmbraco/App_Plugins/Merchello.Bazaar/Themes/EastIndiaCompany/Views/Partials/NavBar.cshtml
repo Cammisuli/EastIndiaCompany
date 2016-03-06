@@ -3,11 +3,13 @@
 @using Merchello.Bazaar.Models
 @using Merchello.Core.Models
 @using Merchello.Web
+@using Umbraco.Core.Models
 @using Umbraco.Web
 @{
     // get all product folders
-    var folders = Model.AncestorOrSelf(1).Children.Where(c => c.DocumentTypeAlias.Equals("folder", StringComparison.OrdinalIgnoreCase));
-
+    var home = Model.AncestorOrSelf(1);
+    var folders = home.Children.Where(c => c.DocumentTypeAlias.Equals("folder", StringComparison.OrdinalIgnoreCase));
+    var children = home.Children.Where(c => !c.DocumentTypeAlias.Equals("folder", StringComparison.OrdinalIgnoreCase) && c.IsVisible());
 }
 <section class="nav">
     <div class="top">
@@ -21,7 +23,7 @@
             </span>
         </div>
         <div class="account-info">
-
+            <a href="@Umbraco.TypedContent(Model.GetProperty("storeUrl", true).Value).Url">@Model.GetProperty("storeUrlText", true).Value</a>
         </div>
     </div>
     <div class="middle">
@@ -46,9 +48,11 @@
                             }
                         </ul>
                     </li>
-                }              
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                }
+                @foreach (var child in children)
+                {
+                    @:<li><a href="@child.Url">@child.Name</a></li>
+                }
             </ul>
 
         </div>

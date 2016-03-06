@@ -18,6 +18,9 @@
     }
     @Html.RenderCssHere()
     @Styles.Render("~/bundles/sitecss")
+    <style>
+        .logo img { visibility: hidden; }
+    </style>
 </head>
 <body class="@Model.DocumentTypeAlias" id="top">
     @Html.ThemedPartial(Model, "NavBar")

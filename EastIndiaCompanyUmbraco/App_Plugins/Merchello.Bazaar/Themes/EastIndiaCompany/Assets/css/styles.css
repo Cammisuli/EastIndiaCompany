@@ -16,7 +16,7 @@ body, h1, h2, h3, h3, h5, p, li, a, div {
   font-family: "Open Sans", Helvetica, Arial, sans-serif; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 75%; }
   @media only screen and (max-width: 480px) {
     html {
       font-size: 60%; } }
@@ -27,6 +27,9 @@ body {
 
 section#content {
   min-height: 56.4vh; }
+  @media only screen and (max-width: 480px) {
+    section#content {
+      margin-bottom: 20px; } }
   section#content .breadcrumbs {
     padding: 15px; }
   section#content .container {
@@ -99,6 +102,9 @@ section.nav {
   text-transform: none;
   position: relative;
   z-index: 999; }
+  @media only screen and (max-width: 480px) {
+    section.nav {
+      height: 12vh; } }
   section.nav .mobile-nav {
     position: absolute;
     z-index: 10; }
@@ -195,13 +201,24 @@ section.nav {
         section.nav .top .search {
           display: none; } }
     section.nav .top .account-info {
-      float: right;
-      padding: 15px 25px; }
-      @media only screen and (max-width: 480px) {
-        section.nav .top .account-info a:first-child {
-          display: none; } }
+      background-color: #be5754;
+      right: 20px;
+      top: 20px;
+      padding: 15px 25px;
+      position: absolute;
+      border-radius: 40px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
       section.nav .top .account-info a {
-        padding-left: 15px; }
+        color: white; }
+      @media only screen and (max-width: 480px) {
+        section.nav .top .account-info {
+          display: none; } }
+      section.nav .top .account-info:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
   section.nav .middle .logo {
     margin: 0 auto;
     width: 40%;
@@ -216,12 +233,17 @@ section.nav {
       /*transition: all 1s ease-in;*/ }
       @media only screen and (min-width: 481px) {
         section.nav .middle .logo img.fixed {
-          width: 20%;
+          width: 25%;
           position: fixed;
           left: 0;
-          top: 38px;
           z-index: 9;
+          -moz-animation: fadeIn 0.9s ease-in;
+          -o-animation: fadeIn 0.9s ease-in;
+          -webkit-animation: fadeIn 0.9s ease-in;
           animation: fadeIn 0.9s ease-in; } }
+      @media only screen and (min-width: 1500px) {
+        section.nav .middle .logo img.fixed {
+          width: 15%; } }
       @media only screen and (max-width: 480px) {
         section.nav .middle .logo img {
           width: 72%; } }
@@ -338,10 +360,10 @@ section.nav {
       -webkit-transition: all ease-out 0.36s;
       transition: all ease-out 0.36s; }
       section.nav .bottom li.has-dropdown ul.dropdown a {
-        color: rgba(255, 255, 255, 0.8); }
+        color: white; }
         section.nav .bottom li.has-dropdown ul.dropdown a:hover, section.nav .bottom li.has-dropdown ul.dropdown a:active, section.nav .bottom li.has-dropdown ul.dropdown a:focus {
           text-decoration: none;
-          color: white; }
+          color: #be5754; }
       section.nav .bottom li.has-dropdown ul.dropdown li {
         height: 60px; }
 
@@ -408,19 +430,17 @@ section#categories {
           display: inline-block; }
 
 section#footer {
-  height: 20vh;
-  background-color: #f4ebd5;
+  background-color: #707133;
   position: relative;
   width: 100%;
   border-top: 1px solid #f1e5c9;
   padding: 15px;
-  color: gray; }
+  color: #e6e6e6; }
   @media only screen and (max-width: 480px) {
     section#footer {
       height: auto;
       margin-top: -30px; } }
   section#footer .copy-right {
-    position: absolute;
     bottom: 15px; }
     @media only screen and (max-width: 480px) {
       section#footer .copy-right {
@@ -494,4 +514,7 @@ a {
   color: #be5754; }
   a:hover, a:active, a:focus {
     color: #be5754; }
+
+.product-info img {
+  margin-bottom: 15px; }
 
