@@ -230,13 +230,14 @@ section.nav {
       width: 75%;
       height: auto;
       margin-top: -80px;
+      position: relative;
       /*transition: all 1s ease-in;*/ }
       @media only screen and (min-width: 481px) {
         section.nav .middle .logo img.fixed {
           width: 25%;
           position: fixed;
           left: 0;
-          z-index: 9;
+          z-index: 9 !important;
           -moz-animation: fadeIn 0.9s ease-in;
           -o-animation: fadeIn 0.9s ease-in;
           -webkit-animation: fadeIn 0.9s ease-in;
@@ -391,7 +392,10 @@ section#categories {
     section#categories .home-message {
       padding-bottom: 30px; } }
   section#categories .home-links {
-    position: absolute; }
+    position: absolute;
+    background-image: url("/eic_logo_transparent.png");
+    background-repeat: no-repeat;
+    background-position: center; }
     @media only screen and (max-width: 480px) {
       section#categories .home-links {
         position: relative;
@@ -517,4 +521,14 @@ a {
 
 .product-info img {
   margin-bottom: 15px; }
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  opacity: 0;
+  top: 0;
+  pointer-events: none;
+  background-color: white; }
 

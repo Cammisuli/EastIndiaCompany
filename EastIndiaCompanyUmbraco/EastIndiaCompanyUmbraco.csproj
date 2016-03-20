@@ -226,6 +226,7 @@
       <DependentUpon>site.js</DependentUpon>
     </Content>
     <Content Include="bin\Archetype.dll" />
+    <Content Include="eic_logo_transparent.png" />
     <Content Include="logo.png" />
     <Content Include="media\1010\img_2523.jpg" />
     <Content Include="media\1011\img_2520.jpg" />

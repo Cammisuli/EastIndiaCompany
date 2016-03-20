@@ -47,15 +47,19 @@ $(function () {
 
     // site reveal
     window.sr = ScrollReveal();
-    sr.reveal('.logo img', {
-        distance: '30px',
-        duration: 600,
-        easing: 'ease-in-out',
-        opacity: 0,
-        scale: 1.2
-    });
+    //sr.reveal('.logo img', {
+    //    distance: '30px',
+    //    duration: 600,
+    //    easing: 'ease-in-out',
+    //    opacity: 0,
+    //    scale: 1.2
+    //});
     sr.reveal('.home-link', {
         reset: true
     });
-
+    // tweening
+    if (window.location.pathname === '/') {
+        TweenMax.from(".logo img", 3, { y: "150%", scale: 1.5, zIndex: 1001, alpha: 0 });
+        TweenMax.from(".overlay", 3, { opacity: 1 });
+    }
 });

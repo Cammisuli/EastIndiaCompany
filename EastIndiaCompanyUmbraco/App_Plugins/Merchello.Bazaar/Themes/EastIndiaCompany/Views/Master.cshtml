@@ -14,17 +14,18 @@
     <title>@Model.StoreTitle - @Model.Name</title>
     @{  // Theme Assets references
         Html.RequiresJs("http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js")
+            .RequiresJs("http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js")
             .RequiresCss("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
     }
     @Html.RenderCssHere()
     @Styles.Render("~/bundles/sitecss")
-    <style>
+    @*<style>
         .logo img { visibility: hidden; }
-    </style>
+    </style>*@
 </head>
 <body class="@Model.DocumentTypeAlias" id="top">
     @Html.ThemedPartial(Model, "NavBar")
-
+    <div class="overlay"></div>
     @RenderBody()
 
     @Html.ThemedPartial(Model, "Footer")
