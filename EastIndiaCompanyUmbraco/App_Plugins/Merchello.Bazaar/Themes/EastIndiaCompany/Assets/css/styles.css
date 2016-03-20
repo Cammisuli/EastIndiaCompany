@@ -392,10 +392,7 @@ section#categories {
     section#categories .home-message {
       padding-bottom: 30px; } }
   section#categories .home-links {
-    position: absolute;
-    background-image: url("/eic_logo_transparent.png");
-    background-repeat: no-repeat;
-    background-position: center; }
+    position: absolute; }
     @media only screen and (max-width: 480px) {
       section#categories .home-links {
         position: relative;
@@ -531,4 +528,12 @@ a {
   top: 0;
   pointer-events: none;
   background-color: white; }
+
+.background-eic, .background-eic-cover {
+  background-image: url("/eic_logo_transparent.png");
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.background-eic-cover {
+  background-size: cover; }
 

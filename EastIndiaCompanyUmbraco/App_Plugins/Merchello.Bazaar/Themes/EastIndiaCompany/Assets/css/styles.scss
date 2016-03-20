@@ -570,9 +570,7 @@ section#categories {
 
     .home-links {
         position: absolute;
-        background-image: url('/eic_logo_transparent.png');
-        background-repeat: no-repeat;
-        background-position: center;
+
 
         @include smartphone-only {
             position: relative;
@@ -771,4 +769,15 @@ a {
     top: 0;
     pointer-events: none;
     background-color: white;
+}
+
+.background-eic {
+    background-image: url('/eic_logo_transparent.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.background-eic-cover {
+    @extend .background-eic;
+    background-size: cover;
 }

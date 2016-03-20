@@ -1,7 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<StoreModel>
+@using System.IdentityModel.Claims
 @using Merchello.Bazaar.Models.ViewModels
 @using Umbraco.Web
 @using Archetype.Models;
+@using Microsoft.Ajax.Utilities
 @{
     Layout = "Master.cshtml";
 }
@@ -21,20 +23,28 @@
                 </p>
             </div>
         </div>
-        <div class="row home-links">
-            @foreach (var fieldset in Model.GetPropertyValue<ArchetypeModel>("contentLinks"))
-            {
+        <div class="row home-links background-eic">
+            @{
+                bool even = true;
 
-                <div class="col-lg-4 col-sm-12">
-                    <div class="home-link">
-                        <img src="@Umbraco.TypedMedia(fieldset.GetValue("contentImage")).Url" alt="" />
-                        <div class="link">
-                            <a href="@Umbraco.TypedContent(@fieldset.GetValue("url")).Url">@Umbraco.TypedContent(@fieldset.GetValue("url")).Name</a>
-                        </div>
-                    </div>
-                </div>
+                foreach (var fieldset in Model.GetPropertyValue<ArchetypeModel>("contentLinks").Fieldsets.Take(2))
+                {
+                    @ContentLink(fieldset, even);
+                    even = !even;
+                }
             }
-           
         </div>
     </div>
 </section>
+
+@helper ContentLink(ArchetypeFieldsetModel fieldset, Boolean left)
+{
+    <div class="col-lg-4 col-md-4 col-sm-12 @(left ? "" : "pull-right")">
+        <div class="home-link">
+            <img src="@Umbraco.TypedMedia(fieldset.GetValue("contentImage")).Url" alt="" />
+            <div class="link">
+                <a href="@Umbraco.TypedContent(@fieldset.GetValue("url")).Url">@Umbraco.TypedContent(@fieldset.GetValue("url")).Name</a>
+            </div>
+        </div>
+    </div>
+}
